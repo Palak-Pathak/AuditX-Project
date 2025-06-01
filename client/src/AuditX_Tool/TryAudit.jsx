@@ -20,7 +20,7 @@ const TryAudit = () => {
     }
 
     try {
-      const res = await axios.post("/api/audit", { code });
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/audit`, { code });
       setResponse(res.data);
     } catch (err) {
       setError("Audit failed. Please try again.");
