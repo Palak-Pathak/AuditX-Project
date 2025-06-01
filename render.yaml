@@ -7,10 +7,3 @@ services:
     root: server
     buildCommand: npm install
     startCommand: npm start
-
-  - type: web
-    name: auditx-frontend
-    env: static
-    plan: free
-    branch: main
-    root: client
