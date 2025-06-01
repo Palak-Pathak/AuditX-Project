@@ -1,0 +1,60 @@
+/* HeroSection.css */
+.glitch {
+    position: relative;
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: red; /* Color of the glitch */
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch-anim 1s infinite linear alternate-reverse;
+  }
+  
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 blue;
+    animation-delay: -0.5s;
+  }
+  
+  .glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 green;
+    animation-delay: -1s;
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(4px, 900px, 10px, 0);
+      transform: skew(0.3deg);
+    }
+    20% {
+      clip: rect(21px, 900px, 50px, 0);
+      transform: skew(0.6deg);
+    }
+    40% {
+      clip: rect(13px, 900px, 30px, 0);
+      transform: skew(0.3deg);
+    }
+    60% {
+      clip: rect(3px, 900px, 50px, 0);
+      transform: skew(0.2deg);
+    }
+    80% {
+      clip: rect(8px, 900px, 20px, 0);
+      transform: skew(0.5deg);
+    }
+    100% {
+      clip: rect(3px, 900px, 25px, 0);
+      transform: skew(0.4deg);
+    }
+  }
+  

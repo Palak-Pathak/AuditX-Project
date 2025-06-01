@@ -1,0 +1,8 @@
+contract Vulnerable {
+  mapping(address => uint) public balances;
+
+  function withdraw(address payable recipient, uint amount) public {
+    balances[msg.sender] -= amount;
+    recipient.transfer(amount);
+  }
+}
